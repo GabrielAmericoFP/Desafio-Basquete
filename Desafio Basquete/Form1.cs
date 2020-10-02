@@ -56,129 +56,152 @@ namespace Desafio_Basquete
 
             //Pega input do usuário para adicionar à tabela
             string placar = Interaction.InputBox("Informe o placar", "Adicionar placar", "", 100, 100);
-            if (int.TryParse(placar, out _))
-            {
-                //Edita o arquivo
-                escritorLista.WriteLine(placar);
 
-                //Termina a edição do arquivo
-                escritorLista.Close();
-                #region Código para adicionar placares
-                //Cria outra linha na tabela
-                this.tableLayoutPanel1.RowCount++;
-                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
-                #region Cria label com o número do jogo
-                Label labelJogo = new Label();
-                labelJogo.Dock = System.Windows.Forms.DockStyle.Fill;
-                labelJogo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                labelJogo.Location = new System.Drawing.Point(4, 42);
-                labelJogo.Name = "labelJogo" + nJogo;
-                labelJogo.Size = new System.Drawing.Size(48, 238);
-                labelJogo.TabIndex = 6;
-                labelJogo.Text = "" + nJogo;
-                labelJogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                this.tableLayoutPanel1.Controls.Add(labelJogo);
-                #endregion
-                #region Cria label com o placar no jogo
-                Label labelPlacar = new Label();
-                labelPlacar.Dock = System.Windows.Forms.DockStyle.Fill;
-                labelPlacar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                labelPlacar.Location = new System.Drawing.Point(4, 42);
-                labelPlacar.Name = "labelPlacar" + nJogo;
-                labelPlacar.Size = new System.Drawing.Size(48, 238);
-                labelPlacar.TabIndex = 6;
-                labelPlacar.Text = placar;
-                labelPlacar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                this.tableLayoutPanel1.Controls.Add(labelPlacar);
-                #endregion
-                #region Cria label com a pontuação mínima da temporada
-                if (nJogo > 1)
-                {
-                    if (Int16.Parse(placar) < pMin)
-                    {
-                        pMin = Int16.Parse(placar);
-                        qMin++;
-                        labelPlacar.BackColor = Color.IndianRed;
-                    }
-                }
-                else
-                {
-                    pMin = Int16.Parse(placar);
-                }
-                Label labelPMin = new Label();
-                labelPMin.Dock = System.Windows.Forms.DockStyle.Fill;
-                labelPMin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                labelPMin.Location = new System.Drawing.Point(4, 42);
-                labelPMin.Name = "labelPMin" + nJogo;
-                labelPMin.Size = new System.Drawing.Size(48, 238);
-                labelPMin.TabIndex = 6;
-                labelPMin.Text = "" + pMin;
-                labelPMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                this.tableLayoutPanel1.Controls.Add(labelPMin);
-                #endregion
-                #region Cria label com a pontuação máxima da temporada
-                if (nJogo > 1)
-                {
-                    if (Int16.Parse(placar) > pMax)
-                    {
-                        pMax = Int16.Parse(placar);
-                        qMax++;
-                        labelPlacar.BackColor = Color.LightGreen;
-                    }
-                }
-                else
-                {
-                    pMax = Int16.Parse(placar);
-                }
-                Label labelPMax = new Label();
-                labelPMax.Dock = System.Windows.Forms.DockStyle.Fill;
-                labelPMax.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                labelPMax.Location = new System.Drawing.Point(4, 42);
-                labelPMax.Name = "labelPMax" + nJogo;
-                labelPMax.Size = new System.Drawing.Size(48, 238);
-                labelPMax.TabIndex = 6;
-                labelPMax.Text = "" + pMax;
-                labelPMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                this.tableLayoutPanel1.Controls.Add(labelPMax);
-                #endregion
-                #region Cria label com a quantidade de vezes que a pontuação mínima foi quebrada
-                Label labelQMin = new Label();
-                labelQMin.Dock = System.Windows.Forms.DockStyle.Fill;
-                labelQMin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                labelQMin.Location = new System.Drawing.Point(4, 42);
-                labelQMin.Name = "labelQMin" + nJogo;
-                labelQMin.Size = new System.Drawing.Size(48, 238);
-                labelQMin.TabIndex = 6;
-                labelQMin.Text = "" + qMin;
-                labelQMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                this.tableLayoutPanel1.Controls.Add(labelQMin);
-                #endregion
-                #region Cria label com a quantidade de vezes que a pontuação máxima foi quebrada
-                Label labelQMax = new Label();
-                labelQMax.Dock = System.Windows.Forms.DockStyle.Fill;
-                labelQMax.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                labelQMax.Location = new System.Drawing.Point(4, 42);
-                labelQMax.Name = "labelQMax" + nJogo;
-                labelQMax.Size = new System.Drawing.Size(48, 238);
-                labelQMax.TabIndex = 6;
-                labelQMax.Text = "" + qMax;
-                labelQMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                this.tableLayoutPanel1.Controls.Add(labelQMax);
-                #endregion
-                //Incrementa o número do jogo
-                nJogo++;
-                #endregion
-            }
-            else
+            #region Checa se a string placar é um número válido
+            if (placar != "")
             {
-                MessageBox.Show("Apenas números são aceitos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (int.TryParse(placar, out _))
+                {
+                    if (Int16.Parse(placar) > 0)
+                    {
+                        if (Int16.Parse(placar) < 1000)
+                        {
+                            //Edita o arquivo
+                            escritorLista.WriteLine(placar);
+
+                            //Termina a edição do arquivo
+                            escritorLista.Close();
+                            #region Código para adicionar placares
+                            //Cria outra linha na tabela
+                            this.tableLayoutPanel1.RowCount++;
+                            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
+                            #region Cria label com o número do jogo
+                            Label labelJogo = new Label();
+                            labelJogo.Dock = System.Windows.Forms.DockStyle.Fill;
+                            labelJogo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            labelJogo.Location = new System.Drawing.Point(4, 42);
+                            labelJogo.Name = "labelJogo" + nJogo;
+                            labelJogo.Size = new System.Drawing.Size(48, 238);
+                            labelJogo.TabIndex = 6;
+                            labelJogo.Text = "" + nJogo;
+                            labelJogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                            this.tableLayoutPanel1.Controls.Add(labelJogo);
+                            #endregion
+                            #region Cria label com o placar no jogo
+                            Label labelPlacar = new Label();
+                            labelPlacar.Dock = System.Windows.Forms.DockStyle.Fill;
+                            labelPlacar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            labelPlacar.Location = new System.Drawing.Point(4, 42);
+                            labelPlacar.Name = "labelPlacar" + nJogo;
+                            labelPlacar.Size = new System.Drawing.Size(48, 238);
+                            labelPlacar.TabIndex = 6;
+                            labelPlacar.Text = placar;
+                            labelPlacar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                            this.tableLayoutPanel1.Controls.Add(labelPlacar);
+                            #endregion
+                            #region Cria label com a pontuação mínima da temporada
+                            if (nJogo > 1)
+                            {
+                                if (Int16.Parse(placar) < pMin)
+                                {
+                                    pMin = Int16.Parse(placar);
+                                    qMin++;
+                                    labelPlacar.BackColor = Color.IndianRed;
+                                }
+                            }
+                            else
+                            {
+                                pMin = Int16.Parse(placar);
+                            }
+                            Label labelPMin = new Label();
+                            labelPMin.Dock = System.Windows.Forms.DockStyle.Fill;
+                            labelPMin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            labelPMin.Location = new System.Drawing.Point(4, 42);
+                            labelPMin.Name = "labelPMin" + nJogo;
+                            labelPMin.Size = new System.Drawing.Size(48, 238);
+                            labelPMin.TabIndex = 6;
+                            labelPMin.Text = "" + pMin;
+                            labelPMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                            this.tableLayoutPanel1.Controls.Add(labelPMin);
+                            #endregion
+                            #region Cria label com a pontuação máxima da temporada
+                            if (nJogo > 1)
+                            {
+                                if (Int16.Parse(placar) > pMax)
+                                {
+                                    pMax = Int16.Parse(placar);
+                                    qMax++;
+                                    labelPlacar.BackColor = Color.LightGreen;
+                                }
+                            }
+                            else
+                            {
+                                pMax = Int16.Parse(placar);
+                            }
+                            Label labelPMax = new Label();
+                            labelPMax.Dock = System.Windows.Forms.DockStyle.Fill;
+                            labelPMax.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            labelPMax.Location = new System.Drawing.Point(4, 42);
+                            labelPMax.Name = "labelPMax" + nJogo;
+                            labelPMax.Size = new System.Drawing.Size(48, 238);
+                            labelPMax.TabIndex = 6;
+                            labelPMax.Text = "" + pMax;
+                            labelPMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                            this.tableLayoutPanel1.Controls.Add(labelPMax);
+                            #endregion
+                            #region Cria label com a quantidade de vezes que a pontuação mínima foi quebrada
+                            Label labelQMin = new Label();
+                            labelQMin.Dock = System.Windows.Forms.DockStyle.Fill;
+                            labelQMin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            labelQMin.Location = new System.Drawing.Point(4, 42);
+                            labelQMin.Name = "labelQMin" + nJogo;
+                            labelQMin.Size = new System.Drawing.Size(48, 238);
+                            labelQMin.TabIndex = 6;
+                            labelQMin.Text = "" + qMin;
+                            labelQMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                            this.tableLayoutPanel1.Controls.Add(labelQMin);
+                            #endregion
+                            #region Cria label com a quantidade de vezes que a pontuação máxima foi quebrada
+                            Label labelQMax = new Label();
+                            labelQMax.Dock = System.Windows.Forms.DockStyle.Fill;
+                            labelQMax.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            labelQMax.Location = new System.Drawing.Point(4, 42);
+                            labelQMax.Name = "labelQMax" + nJogo;
+                            labelQMax.Size = new System.Drawing.Size(48, 238);
+                            labelQMax.TabIndex = 6;
+                            labelQMax.Text = "" + qMax;
+                            labelQMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                            this.tableLayoutPanel1.Controls.Add(labelQMax);
+                            #endregion
+                            //Incrementa o número do jogo
+                            nJogo++;
+                            #endregion
+                        }
+                        else
+                        {
+                            MessageBox.Show("O placar deve ser menor que mil.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            escritorLista.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("O placar não pode ser negativo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        escritorLista.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Apenas números são aceitos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    escritorLista.Close();
+                }
             }
         }
+        #endregion
 
         private void LimparLista_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Tem certeza que deseja apagar todo o conteúdo da lista e fechar o programa?", "Limpar e Sair",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.Yes)
             {
                 File.WriteAllText(arquivoLista.FullName, "");
