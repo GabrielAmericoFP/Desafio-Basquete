@@ -15,27 +15,38 @@ namespace Desafio_Basquete
 {
     public partial class DesafioBasquete : Form
     {
-        #region Variáveis
+        #region Variáveis de classe
         //Informações do arquivo contendo informações da tabela
         FileInfo arquivoLista = new FileInfo(Application.StartupPath + @"\ListaDePlacares.csv");
 
         //Booleano que informa se o arquivo já foi lido
         bool leuLista = false;
 
-        //Inteiros que verificam dados importantes da tabela
-        int nJogo = 1;
-        int pMax = 0;
-        int pMin = 0;
-        int qMax = 0;
-        int qMin = 0;
         #endregion
         public DesafioBasquete()
         {
             //Inicializa a UI com o botão de maximizar desabilitado
             InitializeComponent();
             MaximizeBox = false;
+            AtualizarTabela();
+        }
+
+        private void AdicionarJogo_Click(object sender, EventArgs e)
+        {
+            string placar = Interaction.InputBox("Informe o placar", "Adicionar placar", "", 100, 100);
+
+        }
+
+        private void AtualizarTabela()
+        {
 
             #region Atualiza a tabela
+            //Inteiros que verificam dados importantes da tabela
+            int nJogo = 1;
+            int pMax = 0;
+            int pMin = 0;
+            int qMax = 0;
+            int qMin = 0;
             if (leuLista == false && arquivoLista.Exists)
             {
                 //Chama uma variável do tipo StreamReader para ler o arquivo .csv
@@ -51,7 +62,7 @@ namespace Desafio_Basquete
                         if (valores.Length >= 1)
                         {
                             //Cria outra linha na tabela
-                            this.tableLayoutPanel1.RowCount ++;
+                            this.tableLayoutPanel1.RowCount++;
                             this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
                             #region Cria label com o número do jogo
                             Label labelJogo = new Label();
@@ -102,7 +113,7 @@ namespace Desafio_Basquete
                             this.tableLayoutPanel1.Controls.Add(labelPMin);
                             #endregion
                             #region Cria label com a pontuação máxima da temporada
-                            if (nJogo>1)
+                            if (nJogo > 1)
                             {
                                 if (Int16.Parse(linha) > pMax)
                                 {
@@ -154,17 +165,11 @@ namespace Desafio_Basquete
                         }
                     }
                 }
-                //Fecha a leitura do arquivo
+                //Termina a leitura do arquivo
                 leitorLista.Close();
                 leuLista = true;
             }
             #endregion
-        }
-
-        private void AdicionarJogo_Click(object sender, EventArgs e)
-        {
-            string placar = Interaction.InputBox("Informe o placar", "Adicionar placar", "", 100, 100);
-
         }
     }
 }
