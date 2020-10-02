@@ -34,6 +34,14 @@ namespace Desafio_Basquete
             //Inicializa a UI com o botão de maximizar desabilitado
             InitializeComponent();
             MaximizeBox = false;
+
+            //Cria um novo arquivo para a tabela, caso ele não exista
+            if (!arquivoLista.Exists)
+            {
+                File.WriteAllText(arquivoLista.FullName, "");
+            }
+
+            //Atualiza a tabela
             if (!leuLista)
             {
                 AtualizarTabela();
@@ -161,6 +169,16 @@ namespace Desafio_Basquete
             #endregion
         }
 
+        private void LimparLista_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Tem certeza que deseja apagar todo o conteúdo da lista e fechar o programa?", "Limpar e Sair",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                File.WriteAllText(arquivoLista.FullName, "");
+                Application.Exit();
+            }
+        }
         private void AtualizarTabela()
         {
             #region Atualiza a tabela
@@ -288,5 +306,6 @@ namespace Desafio_Basquete
             leuLista = true;
             #endregion
         }
+
     }
 }

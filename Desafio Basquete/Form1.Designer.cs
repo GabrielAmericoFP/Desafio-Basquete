@@ -37,6 +37,7 @@
             this.Placar0 = new System.Windows.Forms.Label();
             this.Jogo0 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LimparLista = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -153,12 +154,25 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.LimparLista);
             this.panel1.Controls.Add(this.AdicionarPlacar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 56);
             this.panel1.TabIndex = 0;
+            // 
+            // LimparLista
+            // 
+            this.LimparLista.BackColor = System.Drawing.SystemColors.Control;
+            this.LimparLista.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LimparLista.Location = new System.Drawing.Point(679, 0);
+            this.LimparLista.Name = "LimparLista";
+            this.LimparLista.Size = new System.Drawing.Size(121, 56);
+            this.LimparLista.TabIndex = 1;
+            this.LimparLista.Text = "Limpar Lista e Fechar";
+            this.LimparLista.UseVisualStyleBackColor = false;
+            this.LimparLista.Click += new System.EventHandler(this.LimparLista_Click);
             // 
             // DesafioBasquete
             // 
@@ -187,6 +201,7 @@
         private System.Windows.Forms.Label Placar0;
         private System.Windows.Forms.Label Jogo0;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button LimparLista;
     }
 }
 
