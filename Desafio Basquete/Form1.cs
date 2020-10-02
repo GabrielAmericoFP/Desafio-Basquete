@@ -72,7 +72,15 @@ namespace Desafio_Basquete
                             this.tableLayoutPanel1.Controls.Add(labelPlacar);
                             #endregion
                             #region Cria label com a pontuação mínima da temporada
-                            if (Int16.Parse(linha) < pMax)
+                            if (nJogo > 1)
+                            {
+                                if (Int16.Parse(linha) < pMin)
+                                {
+                                    pMin = Int16.Parse(linha);
+                                    qMin++;
+                                }
+                            }
+                            else
                             {
                                 pMin = Int16.Parse(linha);
                             }
@@ -80,15 +88,23 @@ namespace Desafio_Basquete
                             labelPMin.Dock = System.Windows.Forms.DockStyle.Fill;
                             labelPMin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                             labelPMin.Location = new System.Drawing.Point(4, 42);
-                            labelPMin.Name = "labelPlacar" + nJogo;
+                            labelPMin.Name = "labelPMin" + nJogo;
                             labelPMin.Size = new System.Drawing.Size(48, 238);
                             labelPMin.TabIndex = 6;
-                            labelPMin.Text = "" + pMax;
+                            labelPMin.Text = "" + pMin;
                             labelPMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                             this.tableLayoutPanel1.Controls.Add(labelPMin);
                             #endregion
                             #region Cria label com a pontuação máxima da temporada
-                            if (Int16.Parse(linha) > pMax)
+                            if (nJogo>1)
+                            {
+                                if (Int16.Parse(linha) > pMax)
+                                {
+                                    pMax = Int16.Parse(linha);
+                                    qMax++;
+                                }
+                            }
+                            else
                             {
                                 pMax = Int16.Parse(linha);
                             }
@@ -96,7 +112,7 @@ namespace Desafio_Basquete
                             labelPMax.Dock = System.Windows.Forms.DockStyle.Fill;
                             labelPMax.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                             labelPMax.Location = new System.Drawing.Point(4, 42);
-                            labelPMax.Name = "labelPlacar" + nJogo;
+                            labelPMax.Name = "labelPMax" + nJogo;
                             labelPMax.Size = new System.Drawing.Size(48, 238);
                             labelPMax.TabIndex = 6;
                             labelPMax.Text = "" + pMax;
@@ -104,7 +120,28 @@ namespace Desafio_Basquete
                             this.tableLayoutPanel1.Controls.Add(labelPMax);
                             #endregion
                             #region Cria label com a quantidade de vezes que a pontuação mínima foi quebrada
-
+                            Label labelQMin = new Label();
+                            labelQMin.Dock = System.Windows.Forms.DockStyle.Fill;
+                            labelQMin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            labelQMin.Location = new System.Drawing.Point(4, 42);
+                            labelQMin.Name = "labelQMin" + nJogo;
+                            labelQMin.Size = new System.Drawing.Size(48, 238);
+                            labelQMin.TabIndex = 6;
+                            labelQMin.Text = "" + qMin;
+                            labelQMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                            this.tableLayoutPanel1.Controls.Add(labelQMin);
+                            #endregion
+                            #region Cria label com a quantidade de vezes que a pontuação máxima foi quebrada
+                            Label labelQMax = new Label();
+                            labelQMax.Dock = System.Windows.Forms.DockStyle.Fill;
+                            labelQMax.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            labelQMax.Location = new System.Drawing.Point(4, 42);
+                            labelQMax.Name = "labelQMax" + nJogo;
+                            labelQMax.Size = new System.Drawing.Size(48, 238);
+                            labelQMax.TabIndex = 6;
+                            labelQMax.Text = "" + qMax;
+                            labelQMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                            this.tableLayoutPanel1.Controls.Add(labelQMax);
                             #endregion
                             nJogo++;
                         }
