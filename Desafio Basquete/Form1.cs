@@ -38,19 +38,25 @@ namespace Desafio_Basquete
             #region Atualiza a tabela
             if (leuLista == false && arquivoLista.Exists)
             {
+                //Chama uma variável do tipo StreamReader para ler o arquivo .csv
                 StreamReader leitorLista = new StreamReader(arquivoLista.FullName);
                 while (!leitorLista.EndOfStream)
                 {
+                    //Detecta o final da linha
                     String linha = leitorLista.ReadLine();
                     if (!String.IsNullOrWhiteSpace(linha))
                     {
+                        //Guarda os valores do arquivo pela duração da leitura
                         String[] valores = linha.Split(',');
                         if (valores.Length >= 1)
                         {
-                            # region Cria label com o número do jogo
+                            //Cria outra linha na tabela
+                            this.tableLayoutPanel1.RowCount ++;
+                            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
+                            #region Cria label com o número do jogo
                             Label labelJogo = new Label();
                             labelJogo.Dock = System.Windows.Forms.DockStyle.Fill;
-                            labelJogo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            labelJogo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                             labelJogo.Location = new System.Drawing.Point(4, 42);
                             labelJogo.Name = "labelJogo" + linha;
                             labelJogo.Size = new System.Drawing.Size(48, 238);
@@ -143,10 +149,12 @@ namespace Desafio_Basquete
                             labelQMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                             this.tableLayoutPanel1.Controls.Add(labelQMax);
                             #endregion
+                            //Incrementa o número do jogo
                             nJogo++;
                         }
                     }
                 }
+                //Fecha a leitura do arquivo
                 leitorLista.Close();
                 leuLista = true;
             }
