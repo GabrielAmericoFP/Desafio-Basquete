@@ -5,3 +5,5 @@ Instruções:
   3. Abra o arquivo 'Tabela de pontos.exe'.
   4. Você pode adicionar pontuações com o botão 'Adicionar Placar' ou limpar as pontuações com o botão 'Limpar Lista e Fechar'.
     - As pontuações adicionadas irão aparecer na tabela, juntamente ao número correspondente ao jogo e estatísticas de recorde.
+    
+APENAS PARA WINDOWS
