@@ -81,13 +81,13 @@ namespace Desafio_Basquete
             #region Checa se a string placar é um número válido
             if (placar != "")
             {
-                this.tableLayoutPanel1.SuspendLayout();
                 if (int.TryParse(placar, out _))
                 {
                     if (Int16.Parse(placar) >= 0)
                     {
                         if (Int16.Parse(placar) < 1000)
                         {
+                            this.tableLayoutPanel1.SuspendLayout();
                             //Edita o arquivo
                             escritorLista.WriteLine(placar);
 
