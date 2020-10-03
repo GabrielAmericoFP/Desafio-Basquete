@@ -9,12 +9,11 @@
             <c>DesafioBasquete</c> extende Form e é a classe principal do código.
             </summary>
         </member>
-        <member name="M:Desafio_Basquete.DesafioBasquete.#ctor(System.IO.StreamReader,System.IO.FileInfo)">
+        <member name="M:Desafio_Basquete.DesafioBasquete.#ctor(System.IO.FileInfo)">
             <summary>
             O método <c>DesafioBasquete</c> é responsável por inicializar o corpo do aplicativo.
             Desabilita o botão de maximizar, cria o arquivo .csv (caso ele não exista) e gera a tabela baseada no mesmo.
             </summary>
-            <param name="leitorLista">É o StreamReader responsável por ler o arquivo .csv.</param>
             <param name="caminhoArquivo">São as informações do arquivo .csv.</param>
         </member>
         <member name="M:Desafio_Basquete.DesafioBasquete.AdicionarJogo_Click(System.Object,System.EventArgs)">
@@ -67,7 +66,7 @@
         <member name="M:Desafio_Basquete.Program.Main">
             <summary>
             Ponto de entrada principal para o aplicativo.
-            Habilita a GUI e inicia o programa, usando como parâmetros o leitor e a posição do arquivo .csv.
+            Habilita a GUI e inicia o programa, usando como parâmetro a posição do arquivo .csv. Cria o arquivo caso ele não exista.
             </summary>
         </member>
         <member name="T:Desafio_Basquete.Properties.Resources">

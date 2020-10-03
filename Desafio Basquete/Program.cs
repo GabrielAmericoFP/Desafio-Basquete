@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms;
 
 namespace Desafio_Basquete
 {
@@ -17,15 +16,19 @@ namespace Desafio_Basquete
     {
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
-        /// Habilita a GUI e inicia o programa, usando como parâmetros o leitor e a posição do arquivo .csv.
+        /// Habilita a GUI e inicia o programa, usando como parâmetro a posição do arquivo .csv. Cria o arquivo caso ele não exista.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            FileInfo arquivoLista = new FileInfo(Application.StartupPath + @"\ListaDePlacares.csv");
+            if (!arquivoLista.Exists)
+            {
+                File.WriteAllText(arquivoLista.FullName, "");
+            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DesafioBasquete(new StreamReader(Application.StartupPath + @"\ListaDePlacares.csv")
-                , new FileInfo(Application.StartupPath + @"\ListaDePlacares.csv")));
+            Application.Run(new DesafioBasquete(arquivoLista));
             
         }
     }

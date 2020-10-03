@@ -36,9 +36,8 @@ namespace Desafio_Basquete
         /// O método <c>DesafioBasquete</c> é responsável por inicializar o corpo do aplicativo.
         /// Desabilita o botão de maximizar, cria o arquivo .csv (caso ele não exista) e gera a tabela baseada no mesmo.
         /// </summary>
-        /// <param name="leitorLista">É o StreamReader responsável por ler o arquivo .csv.</param>
         /// <param name="caminhoArquivo">São as informações do arquivo .csv.</param>
-        public DesafioBasquete(StreamReader leitorLista, FileInfo caminhoArquivo)
+        public DesafioBasquete(FileInfo caminhoArquivo)
         {
             //Inicializa a UI com o botão de maximizar desabilitado
             InitializeComponent();
@@ -49,6 +48,7 @@ namespace Desafio_Basquete
             {
                 File.WriteAllText(caminhoArquivo.FullName, "");
             }
+            StreamReader leitorLista = new StreamReader(caminhoArquivo.FullName);
             //Atualiza a tabela
             if (!leuLista)
             {

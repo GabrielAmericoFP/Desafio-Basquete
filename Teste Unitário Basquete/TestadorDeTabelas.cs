@@ -31,8 +31,7 @@ namespace Teste_Unitário_Basquete
         public void TesteAdicionarPlacares()
         {
             File.WriteAllText(caminhoArquivo.FullName, "");
-            var reader = new StreamReader(caminhoArquivo.FullName);
-            DesafioBasquete teste = new DesafioBasquete(reader, caminhoArquivo);
+            DesafioBasquete teste = new DesafioBasquete(caminhoArquivo);
 
             Assert.AreEqual(1, teste.nJogo);
             teste.AdicionaPlacar("100",caminhoArquivo);
