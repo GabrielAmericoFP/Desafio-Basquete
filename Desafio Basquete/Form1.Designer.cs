@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DesafioBasquete));
             this.AdicionarPlacar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.QuebraMax0 = new System.Windows.Forms.Label();
@@ -38,6 +39,8 @@
             this.Jogo0 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LimparLista = new System.Windows.Forms.Button();
+            this.Creditos = new System.Windows.Forms.Label();
+            this.Creditos1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -75,14 +78,14 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 58);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 282);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -92,7 +95,7 @@
             this.QuebraMax0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuebraMax0.Location = new System.Drawing.Point(637, 1);
             this.QuebraMax0.Name = "QuebraMax0";
-            this.QuebraMax0.Size = new System.Drawing.Size(159, 280);
+            this.QuebraMax0.Size = new System.Drawing.Size(159, 281);
             this.QuebraMax0.TabIndex = 5;
             this.QuebraMax0.Text = "Quebra recorde máx.";
             this.QuebraMax0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,7 +106,7 @@
             this.QuebraMin0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuebraMin0.Location = new System.Drawing.Point(474, 1);
             this.QuebraMin0.Name = "QuebraMin0";
-            this.QuebraMin0.Size = new System.Drawing.Size(156, 280);
+            this.QuebraMin0.Size = new System.Drawing.Size(156, 281);
             this.QuebraMin0.TabIndex = 4;
             this.QuebraMin0.Text = "Quebra recorde min.";
             this.QuebraMin0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -114,7 +117,7 @@
             this.Maximo0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Maximo0.Location = new System.Drawing.Point(304, 1);
             this.Maximo0.Name = "Maximo0";
-            this.Maximo0.Size = new System.Drawing.Size(163, 280);
+            this.Maximo0.Size = new System.Drawing.Size(163, 281);
             this.Maximo0.TabIndex = 3;
             this.Maximo0.Text = "Máximo da temporada";
             this.Maximo0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -125,7 +128,7 @@
             this.Minimo0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Minimo0.Location = new System.Drawing.Point(136, 1);
             this.Minimo0.Name = "Minimo0";
-            this.Minimo0.Size = new System.Drawing.Size(161, 280);
+            this.Minimo0.Size = new System.Drawing.Size(161, 281);
             this.Minimo0.TabIndex = 2;
             this.Minimo0.Text = "Mínimo da temporada";
             this.Minimo0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -136,7 +139,7 @@
             this.Placar0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Placar0.Location = new System.Drawing.Point(59, 1);
             this.Placar0.Name = "Placar0";
-            this.Placar0.Size = new System.Drawing.Size(70, 280);
+            this.Placar0.Size = new System.Drawing.Size(70, 281);
             this.Placar0.TabIndex = 1;
             this.Placar0.Text = "Placar";
             this.Placar0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -147,13 +150,15 @@
             this.Jogo0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Jogo0.Location = new System.Drawing.Point(4, 1);
             this.Jogo0.Name = "Jogo0";
-            this.Jogo0.Size = new System.Drawing.Size(48, 280);
+            this.Jogo0.Size = new System.Drawing.Size(48, 281);
             this.Jogo0.TabIndex = 0;
             this.Jogo0.Text = "Jogo";
             this.Jogo0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Creditos1);
+            this.panel1.Controls.Add(this.Creditos);
             this.panel1.Controls.Add(this.LimparLista);
             this.panel1.Controls.Add(this.AdicionarPlacar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -174,6 +179,32 @@
             this.LimparLista.UseVisualStyleBackColor = false;
             this.LimparLista.Click += new System.EventHandler(this.LimparLista_Click);
             // 
+            // Creditos
+            // 
+            this.Creditos.AutoSize = true;
+            this.Creditos.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Creditos.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Creditos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Creditos.Location = new System.Drawing.Point(615, 22);
+            this.Creditos.Name = "Creditos";
+            this.Creditos.Size = new System.Drawing.Size(62, 14);
+            this.Creditos.TabIndex = 2;
+            this.Creditos.Text = "Criado por:";
+            this.Creditos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Creditos1
+            // 
+            this.Creditos1.AutoSize = true;
+            this.Creditos1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Creditos1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Creditos1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Creditos1.Location = new System.Drawing.Point(511, 36);
+            this.Creditos1.Name = "Creditos1";
+            this.Creditos1.Size = new System.Drawing.Size(166, 14);
+            this.Creditos1.TabIndex = 3;
+            this.Creditos1.Text = "Gabriel Américo Fontes Pessôa";
+            this.Creditos1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // DesafioBasquete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,10 +213,12 @@
             this.ClientSize = new System.Drawing.Size(800, 339);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DesafioBasquete";
-            this.Text = "Desafio Basquete";
+            this.Text = "Tabela de pontos";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -202,6 +235,8 @@
         private System.Windows.Forms.Label Jogo0;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button LimparLista;
+        private System.Windows.Forms.Label Creditos;
+        private System.Windows.Forms.Label Creditos1;
     }
 }
 

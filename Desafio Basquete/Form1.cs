@@ -55,14 +55,14 @@ namespace Desafio_Basquete
             escritorLista.AutoFlush = false;
 
             //Pega input do usuário para adicionar à tabela
-            string placar = Interaction.InputBox("Informe o placar", "Adicionar placar", "", 100, 100);
+            string placar = Interaction.InputBox("Informe o placar. Deve ser um número positivo menor que mil.", "Adicionar placar", "", 100, 100);
 
             #region Checa se a string placar é um número válido
             if (placar != "")
             {
                 if (int.TryParse(placar, out _))
                 {
-                    if (Int16.Parse(placar) > 0)
+                    if (Int16.Parse(placar) >= 0)
                     {
                         if (Int16.Parse(placar) < 1000)
                         {
@@ -200,6 +200,7 @@ namespace Desafio_Basquete
 
         private void LimparLista_Click(object sender, EventArgs e)
         {
+            //Confirma se o usuário não clicou no botão por acidente
             DialogResult dr = MessageBox.Show("Tem certeza que deseja apagar todo o conteúdo da lista e fechar o programa?", "Limpar e Sair",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.Yes)
