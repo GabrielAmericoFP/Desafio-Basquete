@@ -78,14 +78,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 58);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 281F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 282);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -95,7 +88,7 @@
             this.QuebraMax0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuebraMax0.Location = new System.Drawing.Point(637, 1);
             this.QuebraMax0.Name = "QuebraMax0";
-            this.QuebraMax0.Size = new System.Drawing.Size(159, 281);
+            this.QuebraMax0.Size = new System.Drawing.Size(159, 280);
             this.QuebraMax0.TabIndex = 5;
             this.QuebraMax0.Text = "Quebra recorde máx.";
             this.QuebraMax0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,7 +99,7 @@
             this.QuebraMin0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuebraMin0.Location = new System.Drawing.Point(474, 1);
             this.QuebraMin0.Name = "QuebraMin0";
-            this.QuebraMin0.Size = new System.Drawing.Size(156, 281);
+            this.QuebraMin0.Size = new System.Drawing.Size(156, 280);
             this.QuebraMin0.TabIndex = 4;
             this.QuebraMin0.Text = "Quebra recorde min.";
             this.QuebraMin0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,7 +110,7 @@
             this.Maximo0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Maximo0.Location = new System.Drawing.Point(304, 1);
             this.Maximo0.Name = "Maximo0";
-            this.Maximo0.Size = new System.Drawing.Size(163, 281);
+            this.Maximo0.Size = new System.Drawing.Size(163, 280);
             this.Maximo0.TabIndex = 3;
             this.Maximo0.Text = "Máximo da temporada";
             this.Maximo0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,7 +121,7 @@
             this.Minimo0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Minimo0.Location = new System.Drawing.Point(136, 1);
             this.Minimo0.Name = "Minimo0";
-            this.Minimo0.Size = new System.Drawing.Size(161, 281);
+            this.Minimo0.Size = new System.Drawing.Size(161, 280);
             this.Minimo0.TabIndex = 2;
             this.Minimo0.Text = "Mínimo da temporada";
             this.Minimo0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,7 +132,7 @@
             this.Placar0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Placar0.Location = new System.Drawing.Point(59, 1);
             this.Placar0.Name = "Placar0";
-            this.Placar0.Size = new System.Drawing.Size(70, 281);
+            this.Placar0.Size = new System.Drawing.Size(70, 280);
             this.Placar0.TabIndex = 1;
             this.Placar0.Text = "Placar";
             this.Placar0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -150,7 +143,7 @@
             this.Jogo0.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Jogo0.Location = new System.Drawing.Point(4, 1);
             this.Jogo0.Name = "Jogo0";
-            this.Jogo0.Size = new System.Drawing.Size(48, 281);
+            this.Jogo0.Size = new System.Drawing.Size(48, 280);
             this.Jogo0.TabIndex = 0;
             this.Jogo0.Text = "Jogo";
             this.Jogo0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

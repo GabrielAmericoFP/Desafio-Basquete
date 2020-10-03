@@ -1,0 +1,9 @@
+C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\bin\Release\Tabela de pontos.exe.config
+C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\bin\Release\Tabela de pontos.exe
+C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\bin\Release\Tabela de pontos.pdb
+C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\obj\Release\Desafio Basquete.csprojAssemblyReference.cache
+C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\obj\Release\Desafio_Basquete.DesafioBasquete.resources
+C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\obj\Release\Desafio_Basquete.Properties.Resources.resources
+C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\obj\Release\Desafio Basquete.csproj.GenerateResource.cache
+C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\obj\Release\Tabela de pontos.exe
+C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\obj\Release\Tabela de pontos.pdb

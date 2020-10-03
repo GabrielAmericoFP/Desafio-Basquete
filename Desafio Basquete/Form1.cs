@@ -195,6 +195,10 @@ namespace Desafio_Basquete
                     escritorLista.Close();
                 }
             }
+            else
+            {
+                escritorLista.Close();
+            }
         }
         #endregion
 
