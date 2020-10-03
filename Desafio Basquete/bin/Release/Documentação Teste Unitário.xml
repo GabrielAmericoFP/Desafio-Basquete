@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tabela de pontos</name>
+    </assembly>
+    <members>
+        <member name="T:Desafio_Basquete.DesafioBasquete">
+            <summary>
+            <c>DesafioBasquete</c> extende Form e é a classe principal do código.
+            </summary>
+        </member>
+        <member name="M:Desafio_Basquete.DesafioBasquete.#ctor(System.IO.StreamReader,System.IO.FileInfo)">
+            <summary>
+            O método <c>DesafioBasquete</c> é responsável por inicializar o corpo do aplicativo.
+            Desabilita o botão de maximizar, cria o arquivo .csv (caso ele não exista) e gera a tabela baseada no mesmo.
+            </summary>
+            <param name="leitorLista">É o StreamReader responsável por ler o arquivo .csv.</param>
+            <param name="caminhoArquivo">São as informações do arquivo .csv.</param>
+        </member>
+        <member name="M:Desafio_Basquete.DesafioBasquete.AdicionarJogo_Click(System.Object,System.EventArgs)">
+            <summary>
+            O método <c>AdicionarJogo_Click</c> é responsável pelas ações que ocorrerão ao clicar no botão "Adicionar Placar". 
+            Pega o input do usuário e chama o método <c>AdicionaPlacar</c> utilizando a string placar como parâmetro.
+            </summary>
+            <param name="sender">É o botão.</param>
+            <param name="e">São os eventos que deveriam ser executados junto ao botão.</param>
+        </member>
+        <member name="M:Desafio_Basquete.DesafioBasquete.AdicionaPlacar(System.String,System.IO.FileInfo)">
+            <summary>
+            O método <c>AdicionaPlacar</c> é responsável por escrever o placar no arquivo .csv e mostrá-lo na tabela.
+            Ele cria um editor do arquivo .csv  e, após checar se a string placar é um número válido, adiciona-a à tabela.
+            </summary>
+            <param name="placar">Input do usuário.</param>
+            <param name="caminhoArquivo">São as informações do arquivo .csv.</param>
+        </member>
+        <member name="M:Desafio_Basquete.DesafioBasquete.LimparLista_Click(System.Object,System.EventArgs)">
+            <summary>
+            O método <c>LimparLista_Click</c> é responsável pelas ações que ocorrerão ao clicar no botão "Limpar Lista e Fechar". 
+            Mostra uma caixa de confirmação da ação. Se sim, apaga todo o conteúdo do arquivo .csv e reinicia o aplicativo.
+            </summary>
+            <param name="sender">É o botão.</param>
+            <param name="e">São os eventos que deveriam ser executados junto ao botão.</param>
+        </member>
+        <member name="M:Desafio_Basquete.DesafioBasquete.AtualizarTabela(System.IO.StreamReader,System.IO.FileInfo)">
+            <summary>
+            O método <c>AtualizarTabela</c> é responsável por atualizar o conteúdo da tabela com base no arquivo .csv. 
+            Cria um leitor do arquivo .csv e adiciona labels à tabela com base nos números apresentados no .csv.
+            </summary>
+        </member>
+        <member name="F:Desafio_Basquete.DesafioBasquete.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:Desafio_Basquete.DesafioBasquete.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:Desafio_Basquete.DesafioBasquete.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="M:Desafio_Basquete.Program.Main">
+            <summary>
+            Ponto de entrada principal para o aplicativo.
+            Habilita a GUI e inicia o programa, usando como parâmetros o leitor e a posição do arquivo .csv.
+            </summary>
+        </member>
+        <member name="T:Desafio_Basquete.Properties.Resources">
+            <summary>
+              Uma classe de recurso fortemente tipados, para pesquisar cadeias de caracteres localizadas etc.
+            </summary>
+        </member>
+        <member name="P:Desafio_Basquete.Properties.Resources.ResourceManager">
+            <summary>
+              Retorna a instância cacheada de ResourceManager utilizada por esta classe.
+            </summary>
+        </member>
+        <member name="P:Desafio_Basquete.Properties.Resources.Culture">
+            <summary>
+              Substitui a propriedade CurrentUICulture do thread atual para todas
+              as pesquisas de recursos que usam esta classe de recursos fortemente tipados.
+            </summary>
+        </member>
+    </members>
+</doc>

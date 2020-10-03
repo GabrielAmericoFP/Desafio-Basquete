@@ -38,9 +38,9 @@
             this.Placar0 = new System.Windows.Forms.Label();
             this.Jogo0 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.LimparLista = new System.Windows.Forms.Button();
-            this.Creditos = new System.Windows.Forms.Label();
             this.Creditos1 = new System.Windows.Forms.Label();
+            this.Creditos = new System.Windows.Forms.Label();
+            this.LimparLista = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -160,17 +160,18 @@
             this.panel1.Size = new System.Drawing.Size(800, 56);
             this.panel1.TabIndex = 0;
             // 
-            // LimparLista
+            // Creditos1
             // 
-            this.LimparLista.BackColor = System.Drawing.SystemColors.Control;
-            this.LimparLista.Dock = System.Windows.Forms.DockStyle.Right;
-            this.LimparLista.Location = new System.Drawing.Point(679, 0);
-            this.LimparLista.Name = "LimparLista";
-            this.LimparLista.Size = new System.Drawing.Size(121, 56);
-            this.LimparLista.TabIndex = 1;
-            this.LimparLista.Text = "Limpar Lista e Fechar";
-            this.LimparLista.UseVisualStyleBackColor = false;
-            this.LimparLista.Click += new System.EventHandler(this.LimparLista_Click);
+            this.Creditos1.AutoSize = true;
+            this.Creditos1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Creditos1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Creditos1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Creditos1.Location = new System.Drawing.Point(511, 36);
+            this.Creditos1.Name = "Creditos1";
+            this.Creditos1.Size = new System.Drawing.Size(166, 14);
+            this.Creditos1.TabIndex = 3;
+            this.Creditos1.Text = "Gabriel Américo Fontes Pessôa";
+            this.Creditos1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Creditos
             // 
@@ -185,18 +186,17 @@
             this.Creditos.Text = "Criado por:";
             this.Creditos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Creditos1
+            // LimparLista
             // 
-            this.Creditos1.AutoSize = true;
-            this.Creditos1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Creditos1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Creditos1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Creditos1.Location = new System.Drawing.Point(511, 36);
-            this.Creditos1.Name = "Creditos1";
-            this.Creditos1.Size = new System.Drawing.Size(166, 14);
-            this.Creditos1.TabIndex = 3;
-            this.Creditos1.Text = "Gabriel Américo Fontes Pessôa";
-            this.Creditos1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LimparLista.BackColor = System.Drawing.SystemColors.Control;
+            this.LimparLista.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LimparLista.Location = new System.Drawing.Point(679, 0);
+            this.LimparLista.Name = "LimparLista";
+            this.LimparLista.Size = new System.Drawing.Size(121, 56);
+            this.LimparLista.TabIndex = 1;
+            this.LimparLista.Text = "Limpar Lista e Reabrir";
+            this.LimparLista.UseVisualStyleBackColor = false;
+            this.LimparLista.Click += new System.EventHandler(this.LimparLista_Click);
             // 
             // DesafioBasquete
             // 
@@ -206,6 +206,7 @@
             this.ClientSize = new System.Drawing.Size(800, 339);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DesafioBasquete";
             this.Text = "Tabela de pontos";

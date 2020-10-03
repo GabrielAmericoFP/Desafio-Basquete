@@ -14,64 +14,74 @@ using Microsoft.VisualBasic;
 namespace Desafio_Basquete
 {
     /// <summary>
-    /// <c>DesafioBasquete</c> extende Form e é a classe principal do código. Todas as alterações manuais foram feitas nela.
+    /// <c>DesafioBasquete</c> extende Form e é a classe principal do código.
     /// </summary>
     public partial class DesafioBasquete : Form
     {
         #region Variáveis de classe
-        //Informações do arquivo contendo informações da tabela
-        FileInfo arquivoLista = new FileInfo(Application.StartupPath + @"\ListaDePlacares.csv");
-
         //Booleano que informa se o arquivo já foi lido
         bool leuLista = false;
 
         //Inteiros que verificam dados importantes da tabela
-        int nJogo = 1;
-        int pMax = 0;
-        int pMin = 0;
-        int qMax = 0;
-        int qMin = 0;
+        public int nJogo = 1;
+        public int pMax = 0;
+        public int pMin = 0;
+        public int qMax = 0;
+        public int qMin = 0;
+
+        //Informações do arquivo contendo informações da tabela
+        FileInfo arquivoLista = new FileInfo(Application.StartupPath + @"\ListaDePlacares.csv");
         #endregion
         /// <summary>
         /// O método <c>DesafioBasquete</c> é responsável por inicializar o corpo do aplicativo.
         /// Desabilita o botão de maximizar, cria o arquivo .csv (caso ele não exista) e gera a tabela baseada no mesmo.
         /// </summary>
-        public DesafioBasquete()
+        /// <param name="leitorLista">É o StreamReader responsável por ler o arquivo .csv.</param>
+        /// <param name="caminhoArquivo">São as informações do arquivo .csv.</param>
+        public DesafioBasquete(StreamReader leitorLista, FileInfo caminhoArquivo)
         {
             //Inicializa a UI com o botão de maximizar desabilitado
             InitializeComponent();
             MaximizeBox = false;
-
+            Size = new Size(816, 378);
             //Cria um novo arquivo para a tabela, caso ele não exista
-            if (!arquivoLista.Exists)
+            if (!caminhoArquivo.Exists)
             {
-                File.WriteAllText(arquivoLista.FullName, "");
+                File.WriteAllText(caminhoArquivo.FullName, "");
             }
-
             //Atualiza a tabela
             if (!leuLista)
             {
-                AtualizarTabela();
+                AtualizarTabela(leitorLista, caminhoArquivo);
             }
         }
         /// <summary>
         /// O método <c>AdicionarJogo_Click</c> é responsável pelas ações que ocorrerão ao clicar no botão "Adicionar Placar". 
-        /// Ele cria um editor do arquivo .csv na pasta do programa e, após checar se a string placar é um número válido, adiciona-a à tabela.
+        /// Pega o input do usuário e chama o método <c>AdicionaPlacar</c> utilizando a string placar como parâmetro.
         /// </summary>
         /// <param name="sender">É o botão.</param>
         /// <param name="e">São os eventos que deveriam ser executados junto ao botão.</param>
         private void AdicionarJogo_Click(object sender, EventArgs e)
         {
-            //Cria uma variável do tipo StreamWriter para escrever no arquivo .csv
-            StreamWriter escritorLista = new StreamWriter(arquivoLista.FullName, true);
-            escritorLista.AutoFlush = false;
-
             //Pega input do usuário para adicionar à tabela
             string placar = Interaction.InputBox("Informe o placar. Deve ser um número positivo menor que mil.", "Adicionar placar", "", 100, 100);
-
+            AdicionaPlacar(placar, arquivoLista);
+        }
+        /// <summary>
+        /// O método <c>AdicionaPlacar</c> é responsável por escrever o placar no arquivo .csv e mostrá-lo na tabela.
+        /// Ele cria um editor do arquivo .csv  e, após checar se a string placar é um número válido, adiciona-a à tabela.
+        /// </summary>
+        /// <param name="placar">Input do usuário.</param>
+        /// <param name="caminhoArquivo">São as informações do arquivo .csv.</param>
+        public void AdicionaPlacar(string placar, FileInfo caminhoArquivo)
+        {
+            //Cria uma variável do tipo StreamWriter para escrever no arquivo .csv
+            StreamWriter escritorLista = new StreamWriter(caminhoArquivo.FullName, true);
+            escritorLista.AutoFlush = false;
             #region Checa se a string placar é um número válido
             if (placar != "")
             {
+                this.tableLayoutPanel1.SuspendLayout();
                 if (int.TryParse(placar, out _))
                 {
                     if (Int16.Parse(placar) >= 0)
@@ -86,7 +96,7 @@ namespace Desafio_Basquete
                             #region Código para adicionar placares
                             //Cria outra linha na tabela
                             this.tableLayoutPanel1.RowCount++;
-                            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
+                            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 22f));
                             #region Cria label com o número do jogo
                             Label labelJogo = new Label();
                             labelJogo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -187,6 +197,7 @@ namespace Desafio_Basquete
                             #endregion
                             //Incrementa o número do jogo
                             nJogo++;
+                            this.tableLayoutPanel1.ResumeLayout();
                             #endregion
                         }
                         else
@@ -211,35 +222,33 @@ namespace Desafio_Basquete
             {
                 escritorLista.Close();
             }
+
+            #endregion
         }
-        #endregion
         /// <summary>
         /// O método <c>LimparLista_Click</c> é responsável pelas ações que ocorrerão ao clicar no botão "Limpar Lista e Fechar". 
-        /// Mostra uma caixa de confirmação da ação. Se sim, apaga todo o conteúdo do arquivo .csv e fecha o aplicativo.
+        /// Mostra uma caixa de confirmação da ação. Se sim, apaga todo o conteúdo do arquivo .csv e reinicia o aplicativo.
         /// </summary>
         /// <param name="sender">É o botão.</param>
         /// <param name="e">São os eventos que deveriam ser executados junto ao botão.</param>
         private void LimparLista_Click(object sender, EventArgs e)
         {
             //Confirma se o usuário não clicou no botão por acidente
-            DialogResult dr = MessageBox.Show("Tem certeza que deseja apagar todo o conteúdo da lista e fechar o programa?", "Limpar e Sair",
+            DialogResult dr = MessageBox.Show("Tem certeza que deseja apagar todo o conteúdo da lista e reiniciar o programa?", "Limpar e Sair",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.Yes)
             {
                 File.WriteAllText(arquivoLista.FullName, "");
-                Application.Exit();
+                Application.Restart();
             }
         }
         /// <summary>
         /// O método <c>AtualizarTabela</c> é responsável por atualizar o conteúdo da tabela com base no arquivo .csv. 
         /// Cria um leitor do arquivo .csv e adiciona labels à tabela com base nos números apresentados no .csv.
         /// </summary>
-        private void AtualizarTabela()
+        public void AtualizarTabela(StreamReader leitorLista, FileInfo caminhoArquivo)
         {
             #region Atualiza a tabela
-
-            //Cria uma variável do tipo StreamReader para ler o arquivo .csv
-            StreamReader leitorLista = new StreamReader(arquivoLista.FullName);
             while (!leitorLista.EndOfStream)
             {
                 //Detecta o final da linha
@@ -252,7 +261,7 @@ namespace Desafio_Basquete
                     {
                         //Cria outra linha na tabela
                         this.tableLayoutPanel1.RowCount++;
-                        this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
+                        this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 22f));
                         #region Cria label com o número do jogo
                         Label labelJogo = new Label();
                         labelJogo.Dock = System.Windows.Forms.DockStyle.Fill;
