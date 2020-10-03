@@ -13,6 +13,9 @@ using Microsoft.VisualBasic;
 
 namespace Desafio_Basquete
 {
+    /// <summary>
+    /// <c>DesafioBasquete</c> extende Form e é a classe principal do código. Todas as alterações manuais foram feitas nela.
+    /// </summary>
     public partial class DesafioBasquete : Form
     {
         #region Variáveis de classe
@@ -29,6 +32,10 @@ namespace Desafio_Basquete
         int qMax = 0;
         int qMin = 0;
         #endregion
+        /// <summary>
+        /// O método <c>DesafioBasquete</c> é responsável por inicializar o corpo do aplicativo.
+        /// Desabilita o botão de maximizar, cria o arquivo .csv (caso ele não exista) e gera a tabela baseada no mesmo.
+        /// </summary>
         public DesafioBasquete()
         {
             //Inicializa a UI com o botão de maximizar desabilitado
@@ -47,7 +54,12 @@ namespace Desafio_Basquete
                 AtualizarTabela();
             }
         }
-
+        /// <summary>
+        /// O método <c>AdicionarJogo_Click</c> é responsável pelas ações que ocorrerão ao clicar no botão "Adicionar Placar". 
+        /// Ele cria um editor do arquivo .csv na pasta do programa e, após checar se a string placar é um número válido, adiciona-a à tabela.
+        /// </summary>
+        /// <param name="sender">É o botão.</param>
+        /// <param name="e">São os eventos que deveriam ser executados junto ao botão.</param>
         private void AdicionarJogo_Click(object sender, EventArgs e)
         {
             //Cria uma variável do tipo StreamWriter para escrever no arquivo .csv
@@ -201,7 +213,12 @@ namespace Desafio_Basquete
             }
         }
         #endregion
-
+        /// <summary>
+        /// O método <c>LimparLista_Click</c> é responsável pelas ações que ocorrerão ao clicar no botão "Limpar Lista e Fechar". 
+        /// Mostra uma caixa de confirmação da ação. Se sim, apaga todo o conteúdo do arquivo .csv e fecha o aplicativo.
+        /// </summary>
+        /// <param name="sender">É o botão.</param>
+        /// <param name="e">São os eventos que deveriam ser executados junto ao botão.</param>
         private void LimparLista_Click(object sender, EventArgs e)
         {
             //Confirma se o usuário não clicou no botão por acidente
@@ -213,6 +230,10 @@ namespace Desafio_Basquete
                 Application.Exit();
             }
         }
+        /// <summary>
+        /// O método <c>AtualizarTabela</c> é responsável por atualizar o conteúdo da tabela com base no arquivo .csv. 
+        /// Cria um leitor do arquivo .csv e adiciona labels à tabela com base nos números apresentados no .csv.
+        /// </summary>
         private void AtualizarTabela()
         {
             #region Atualiza a tabela

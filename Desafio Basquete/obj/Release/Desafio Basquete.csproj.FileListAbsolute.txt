@@ -7,3 +7,4 @@ C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\obj\Release\Desafi
 C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\obj\Release\Desafio Basquete.csproj.GenerateResource.cache
 C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\obj\Release\Tabela de pontos.exe
 C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\obj\Release\Tabela de pontos.pdb
+C:\Users\gabri\source\repos\Desafio Basquete\Desafio Basquete\bin\Release\Tabela de pontos.xml

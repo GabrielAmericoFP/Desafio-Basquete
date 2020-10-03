@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: Desafio_Basquete
+  commentId: N:Desafio_Basquete
+  id: Desafio_Basquete
+  children:
+  - Desafio_Basquete.DesafioBasquete
+  langs:
+  - csharp
+  - vb
+  name: Desafio_Basquete
+  nameWithType: Desafio_Basquete
+  fullName: Desafio_Basquete
+  type: Namespace
+  assemblies:
+  - Tabela de pontos
+references:
+- uid: Desafio_Basquete.DesafioBasquete
+  commentId: T:Desafio_Basquete.DesafioBasquete
+  name: DesafioBasquete
+  nameWithType: DesafioBasquete
+  fullName: Desafio_Basquete.DesafioBasquete
