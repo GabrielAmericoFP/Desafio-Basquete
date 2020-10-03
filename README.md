@@ -1,4 +1,4 @@
-# Desafio-Basquete
+# Tabela de pontos
 Instruções:
   1. Faça o download da versão release mais nova.
   2. Extraia o arquivo .zip num lugar de preferência.
